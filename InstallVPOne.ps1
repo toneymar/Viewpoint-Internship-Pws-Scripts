@@ -43,9 +43,9 @@ $Arguments = @(
 
 $InstallerFullName = $VPOneInstaller.FullName
 
-Start-Process                                                `
-       -FilePath            $InstallerFullName      `
-       -ArgumentList   $Arguments                `
+Start-Process                                  `
+       -FilePath       $InstallerFullName      `
+       -ArgumentList   $Arguments              `
        -Wait
 
 if ((Select-String -Path "C:\Installers\ViewpointOneIntegration\installerlog.txt" -Pattern "Installation operation completed successfully" -Quiet) -ne "True") {
